@@ -2,7 +2,7 @@
 
 ## Links
 
-[Github](https://github.com/darkhappy/prog)
+[Github](https://github.com/drkhapp-school/prog)
 [Trello](https://trello.com/b/dlkHvVEK)
 
 ## Schedule
