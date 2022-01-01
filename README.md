@@ -1,5 +1,4 @@
 # Programmation
----
 
 These are all my school projects that involves programming. This public repo is updated *somewhat* regularly. 
 
