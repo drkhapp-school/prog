@@ -1,0 +1,15 @@
+@use 'base';
+
+@mixin transparancy($alpha) {
+  opacity: $alpha;
+}
+
+.contenu {
+  background-color: base.$color;
+
+  p {
+    font-weight: bold;
+    @include transparancy(0.5);
+  }
+}
+
