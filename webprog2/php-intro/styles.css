@@ -1,5 +1,6 @@
 body {
   height: 100%;
+  background-color: #acacac;
 }
 
 .contenu {
@@ -8,6 +9,10 @@ body {
 .contenu p {
   font-weight: bold;
   opacity: 0.5;
+}
+.contenu a {
+  font-weight: lighter;
+  text-decoration: none;
 }
 
 /*# sourceMappingURL=styles.css.map */
