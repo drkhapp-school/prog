@@ -11,5 +11,10 @@
     font-weight: bold;
     @include transparancy(0.5);
   }
+
+  a {
+    font-weight: lighter;
+    text-decoration: none;
+  }
 }
 
