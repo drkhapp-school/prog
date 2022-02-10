@@ -1,20 +1,3 @@
-@use 'base';
+$primary: indigo;
 
-@mixin transparancy($alpha) {
-  opacity: $alpha;
-}
-
-.contenu {
-  background-color: base.$color;
-
-  p {
-    font-weight: bold;
-    @include transparancy(0.5);
-  }
-
-  a {
-    font-weight: lighter;
-    text-decoration: none;
-  }
-}
-
+@import "node_modules/bootstrap/scss/bootstrap";
