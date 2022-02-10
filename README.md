@@ -6,7 +6,6 @@ This public repo is updated *somewhat* regularly. Any work that has not been gra
 
 Note that all comments are in **French.**
 
-<h3 align="left">🎓 Classes:</h3>
 
 - <a href="https://www.java.com" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-original.svg" alt="java" width="20" height="20"/> </a> **prog1:** Introduction to Programmation I
 - <a href="https://www.java.com" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-original.svg" alt="java" width="20" height="20"/> </a> **prog2:** Introduction to Programmation II
