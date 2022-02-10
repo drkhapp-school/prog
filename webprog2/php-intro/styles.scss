@@ -1,15 +1,1 @@
-@use 'base';
-
-@mixin transparancy($alpha) {
-  opacity: $alpha;
-}
-
-.contenu {
-  background-color: base.$color;
-
-  p {
-    font-weight: bold;
-    @include transparancy(0.5);
-  }
-}
-
+@import "node_modules/bootstrap/scss/bootstrap";
