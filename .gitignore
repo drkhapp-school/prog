@@ -304,3 +304,6 @@ dist
 
 # SvelteKit build / generate output
 .svelte-kit
+
+# Ignoring .idea in root
+/.idea
