@@ -1,0 +1,10 @@
+{
+  "name": "atelier0",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "bootstrap": "^5.1.3",
+    "bootstrap-icons": "^1.8.1"
+  }
+}
