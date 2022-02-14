@@ -1,106 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>Atelier 0</title>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <link href="style.css" rel="stylesheet">
-</head>
-<body>
-<div class="container">
-    <nav class="navbar navbar-expand-md navbar-light border-bottom">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <link
+      href="../node_modules/bootstrap/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="m-3">
+      <a href=".." class="btn btn-primary">go back lol</a>
+    </div>
+    <hr />
+    <div class="container">
+      <nav class="navbar navbar-expand-md navbar-light border-bottom">
         <a class="navbar-brand text-black" href="#">Company name</a>
         <ul class="navbar-nav d-flex mt-2 ms-auto">
-            <li class="nav-item">
-                <a class="nav-link active" href="#">Features</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Enterprise</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Support</a>
-            </li>
-            <li class="nav-item me-2">
-                <a class="nav-link" href="#">Pricing</a>
-            </li>
-            <li class="nav-item">
-                <button class="btn btn-sm btn-outline-primary">Sign up</button>
-            </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="#">Features</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Enterprise</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Support</a>
+          </li>
+          <li class="nav-item me-2">
+            <a class="nav-link" href="#">Pricing</a>
+          </li>
+          <li class="nav-item">
+            <button class="btn btn-sm btn-outline-primary">Sign up</button>
+          </li>
         </ul>
-    </nav>
-    <header>
+      </nav>
+      <header>
         <div class="w-75 mx-auto text-center pt-5 pb-3">
-            <h1 class="display-4 fw-normal">
-                Pricing
-            </h1>
-            <p class="fs-5 text-muted">
-                Quickly build an effective pricing table for your potential customers with this Bootstrap example. It’s
-                built
-                with default Bootstrap components and utilities with little customization.
-            </p>
+          <h1 class="display-4 fw-normal">Pricing</h1>
+          <p class="fs-5 text-muted">
+            Quickly build an effective pricing table for your potential
+            customers with this Bootstrap example. It’s built with default
+            Bootstrap components and utilities with little customization.
+          </p>
         </div>
-    </header>
-    <main>
+      </header>
+      <main>
         <div class="row row-cols-1 text-center row-cols-md-3 g-4">
-            <div class="col">
-                <div class="card">
-                    <div class="card-header">
-                        <h4 class="fw-normal my-0">Free</h4>
-                    </div>
-                    <div class="card-body">
-                        <h1 class="card-title fw-normal">$0<span class="text-muted fw-light">/mo</span></h1>
-                        <ul class="list-unstyled">
-                            <li>10 users included</li>
-                            <li>2 GB of storage</li>
-                            <li>Email support</li>
-                            <li>Help center access</li>
-                        </ul>
-                        <div class="d-grid gap-2">
-                            <button class="btn btn-outline-primary" type="button">Sign up for free</button>
-                        </div>
-                    </div>
+          <div class="col">
+            <div class="card">
+              <div class="card-header">
+                <h4 class="fw-normal my-0">Free</h4>
+              </div>
+              <div class="card-body">
+                <h1 class="card-title fw-normal">
+                  $0<span class="text-muted fw-light">/mo</span>
+                </h1>
+                <ul class="list-unstyled">
+                  <li>10 users included</li>
+                  <li>2 GB of storage</li>
+                  <li>Email support</li>
+                  <li>Help center access</li>
+                </ul>
+                <div class="d-grid gap-2">
+                  <button class="btn btn-outline-primary" type="button">
+                    Sign up for free
+                  </button>
                 </div>
+              </div>
             </div>
-            <div class="col">
-                <div class="card">
-                    <div class="card-header">
-                        <h4 class="fw-normal my-0">Pro</h4>
-                    </div>
-                    <div class="card-body">
-                        <h1 class="card-title fw-normal">$15<span class="text-muted fw-light">/mo</span></h1>
-                        <ul class="list-unstyled">
-                            <li>20 users included</li>
-                            <li>2 GB of storage</li>
-                            <li>Priority email support</li>
-                            <li>Help center access</li>
-                        </ul>
-                        <div class="d-grid gap-2">
-                            <button class="btn btn-primary" type="button">Get started</button>
-                        </div>
-                    </div>
+          </div>
+          <div class="col">
+            <div class="card">
+              <div class="card-header">
+                <h4 class="fw-normal my-0">Pro</h4>
+              </div>
+              <div class="card-body">
+                <h1 class="card-title fw-normal">
+                  $15<span class="text-muted fw-light">/mo</span>
+                </h1>
+                <ul class="list-unstyled">
+                  <li>20 users included</li>
+                  <li>2 GB of storage</li>
+                  <li>Priority email support</li>
+                  <li>Help center access</li>
+                </ul>
+                <div class="d-grid gap-2">
+                  <button class="btn btn-primary" type="button">
+                    Get started
+                  </button>
                 </div>
+              </div>
             </div>
-            <div class="col">
-                <div class="card">
-                    <div class="card-header bg-primary text-white">
-                        <h4 class="fw-normal my-0">Enterprise</h4>
-                    </div>
-                    <div class="card-body">
-                        <h1 class="card-title fw-normal">$29<span class="text-muted fw-light">/mo</span></h1>
-                        <ul class="list-unstyled">
-                            <li>30 users included</li>
-                            <li>15 GB of storage</li>
-                            <li>Phone and email support</li>
-                            <li>Help center access</li>
-                        </ul>
-                        <div class="d-grid gap-2">
-                            <button class="btn btn-primary" type="button">Contact us</button>
-                        </div>
-                    </div>
+          </div>
+          <div class="col">
+            <div class="card">
+              <div class="card-header bg-primary text-white">
+                <h4 class="fw-normal my-0">Enterprise</h4>
+              </div>
+              <div class="card-body">
+                <h1 class="card-title fw-normal">
+                  $29<span class="text-muted fw-light">/mo</span>
+                </h1>
+                <ul class="list-unstyled">
+                  <li>30 users included</li>
+                  <li>15 GB of storage</li>
+                  <li>Phone and email support</li>
+                  <li>Help center access</li>
+                </ul>
+                <div class="d-grid gap-2">
+                  <button class="btn btn-primary" type="button">
+                    Contact us
+                  </button>
                 </div>
+              </div>
             </div>
+          </div>
         </div>
-    </main>
-</div>
-</body>
+      </main>
+    </div>
+  </body>
 </html>
