@@ -62,7 +62,7 @@ function PPCM(int $j, int $k): int
 <div class="container">
     <h1 class="display-3 mb-3">Atelier 1.1</h1>
     <div class="mb-5">
-        <h3 class="fw-light">Numéro 1</h3>
+        <h2 class="fw-light">Numéro 1</h2>
         <p>Créer trois fonctions suivantes:</p>
         <ul>
             <li>
@@ -136,19 +136,29 @@ function PPCM(int $j, int $k): int
         </div>
     </div>
     <div class="mb-5">
-        <h3 class="fw-light">Numéro 2</h3>
+        <h2 class="fw-light mb-3">Numéro 2</h2>
+        <h4 class="fw-normal">Définitions</h4>
+        <div class="row border-bottom border-1 mb-3">
+            <div class="col">
+                <h5 class="fw-light">Plus Grand Commun Diviseur</h5>
+                <p> Entre 2 nombres, trouver le
+                    plus grand entier qui permet de les diviser sans restes. Donc n1 / x = a
+                    et n2 / x = b, trouver x (tous doivent être des entiers). Avec 8 et 6 le
+                    PGCD est 2 (8 / 2 = 4 et 6 / 2 = 3) et avec 16 et 24, c'est 8 (16 / 8 = 2
+                    et 24 / 8 = 3).
+                </p>
+            </div>
+            <div class="col">
+                <h5 class="fw-light">Plus Petit Commun Multiple</h5>
+                <p> Avec 2 nombres, trouver le plus
+                    petit multiple commun (avec des entiers). Donc n1 * a = x et n2 * b = x,
+                    trouver x (tous doivent être des entiers). Avec 16 et 20 le PPCM est 80
+                    (16 * 5 = 80 et 20 * 4 = 80).
+                </p>
+            </div>
+        </div>
         <p>
-            <b>PGCD: Plus Grand Commun Diviseur.</b> Entre 2 nombres, trouver le
-            plus grand entier qui permet de les diviser sans restes. Donc n1 / x = a
-            et n2 / x = b, trouver x (tous doivent être des entiers). Avec 8 et 6 le
-            PGCD est 2 (8 / 2 = 4 et 6 / 2 = 3) et avec 16 et 24, c'est 8 (16 / 8 = 2
-            et 24 / 8 = 3).
-        </p>
-        <p>
-            <b>PPCM: Plus Petit Commun Multiple.</b> Avec 2 nombres, trouver le plus
-            petit multiple commun (avec des entiers). Donc n1 * a = x et n2 * b = x,
-            trouver x (tous doivent être des entiers). Avec 16 et 20 le PPCM est 80
-            (16 * 5 = 80 et 20 * 4 = 80). Ce que vous devez faire:
+            Ce que vous devez faire:
         </p>
         <ol>
             <li>
@@ -196,6 +206,53 @@ function PPCM(int $j, int $k): int
                                 ?>
                             </code>
                         </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="mb-5">
+        <h2 class="fw-light">Numéro 3</h2>
+        <p>Générez un nombre aléatoire entre -10 et 10 et selon le nombre trouvé changez le PHP (ne pas echo de
+            HTML).</p>
+        <ul>
+            <li>
+                Nombre plus petit que 0: Afficher un alert rouge (danger) qui indique que le nombre est invalide
+            </li>
+            <li>
+                Nombre plus grand que 0: Afficher un alert vert (success) et indiquez dans ce alert si le nombre est
+                pair ou non
+            </li>
+            <li>
+                Nombre égale à 0: Ne pas afficher de alert
+            </li>
+        </ul>
+        <div class="row">
+            <?php $num = rand(-10, 10); ?>
+            <div class="col-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="card-title fw-light fs-4">Input</h3>
+                        <code class="card-body">
+                            num: <?php var_dump($num); ?>
+                        </code>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="card-title fw-light fs-4">Output</h3>
+                        <?php if ($num < 0) { ?>
+                            <div class="alert alert-danger">
+                                Le nombre est invalid.
+                            </div>
+                        <?php } elseif ($num) { ?>
+                            <div class="alert alert-success">
+                                Le nombre est valid et est
+                                <?= $num % 2 == 0 ? "pair" : "impair" ?>.
+                            </div>
+                        <?php } ?>
                     </div>
                 </div>
             </div>
