@@ -7,7 +7,7 @@ function NomComplet(string $last, string $first): string
 
 function EstMajeur(int $age): ?bool
 {
-    return $age >= 18 ?: ($age > 0 ? false : null);
+    return $age < 0 ? null : $age >= 18;
 }
 
 function PlusGrand(int ...$arr): int
@@ -18,20 +18,18 @@ function PlusGrand(int ...$arr): int
             $max = $item;
         }
     }
+
     return $max;
 }
 
 // Numéro 2
 function PGCD(int $j, int $k): int
 {
-    $pgcm = 1;
-    $max = max($j, $k);
-    for ($i = 1; $i <= $max; $i++) {
-        if (!($j % $i) && !($k % $i)) {
-            $pgcm = $i;
-        }
+    $n = min($j, $k);
+    while ($j % $n != 0 || $k % $n != 0) {
+        $n--;
     }
-    return $pgcm;
+    return $n;
 }
 
 function PPCM(int $j, int $k): int
@@ -48,7 +46,7 @@ function PPCM(int $j, int $k): int
             content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
     />
     <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
-    <title>Document</title>
+    <title>Atelier 1.1</title>
     <link
             href="../node_modules/bootstrap/dist/css/bootstrap.min.css"
             rel="stylesheet"
