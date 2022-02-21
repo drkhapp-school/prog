@@ -1,3 +1,31 @@
+<?php
+function PGCD(int $j, int $k): int
+{
+    $n = min($j, $k);
+    while ($j % $n != 0 || $k % $n != 0) {
+        $n--;
+    }
+    return $n;
+}
+
+function PPCM(int $j, int $k): int
+{
+    return ($j * $k) / PGCD($j, $k);
+}
+
+$games = [
+    "Portal 2",
+    "Half Life 2",
+    "Half Life Alyx",
+    "Zenith MMR",
+    "Beat Saber",
+    "Counter Strike: Global Offensive",
+    "Minecraft",
+    "Super Smash Brothers Ultimate",
+    "A Hat in Time",
+    "NiER: Automata",
+];
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,7 +48,7 @@
 <hr/>
 <div class="container">
     <h1 class="display-3 mb-3">Atelier 1.2</h1>
-    <div class="mb-4">
+    <div class="mb-4" id="num1">
         <h2 class="fw-light mb-3">Numéro 1</h2>
         <div class="row">
             <div class="col-4">
@@ -38,46 +66,78 @@
                 </p>
             </div>
             <div class="col-8">
-                <form>
+                <form method="get" action="index.php#num1">
                     <div class="mb-3">
-                        <label for="game" class="form-label">Filtre</label>
-                        <input type="text" class="form-control" id="game">
+                        <label for="q" class="form-label">Filtre</label>
+                        <input type="text" class="form-control" id="q" name="q">
                     </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
-                <button type="submit" class="btn btn-primary">Submit</button>
                 <ul class="list-group mt-3">
-                    <li class="list-group-item">lol</li>
-                    <li class="list-group-item">lol</li>
-                    <li class="list-group-item">lol</li>
-                    <li class="list-group-item">lol</li>
-                    <li class="list-group-item">lol</li>
-                    <li class="list-group-item">lol</li>
-                    <li class="list-group-item">lol</li>
-                    <li class="list-group-item">lol</li>
-                    <li class="list-group-item">lol</li>
-                    <li class="list-group-item">lol</li>
-                    <li class="list-group-item">lol</li>
+                    <?php foreach ($games as $value) {
+                        if (
+                            isset($_GET["q"]) &&
+                            !str_contains(
+                                strtolower($value),
+                                strtolower($_GET["q"])
+                            )
+                        ) {
+                            continue;
+                        }
+                        echo "<li class='list-group-item'>" . $value . "</li>";
+                    } ?>
                 </ul>
             </div>
         </div>
     </div>
-    <div class="mb-4">
+    <div class="mb-4" id="num2">
         <h2 class="fw-light mb-3">Numéro 2</h2>
         <div class="row">
             <div class="col-4">
                 <p>
-                    Dans un fichier PHP, créez un tableau contenant au moins 10 chaînes de caractères.
-                    Dans le HTML de ce fichier, affichez:
+                    Récupérez votre numéro de PGCD et PPCM de l'atelier précédent. Ajoutez un formulaire HTML qui
+                    demande les deux nombres et qui fonctionne en POST. Lorsque je soumet le formulaire:
                 </p>
                 <ul>
                     <li>Affichez les deux résultats;</li>
-                    <li>Un formulaire de recherche (champ texte et bouton)</li>
+                    <li>Gardez les nombres envoyés dans le formulaire;</li>
                 </ul>
             </div>
-            <div class="col-8"></div>
+            <div class="col-8">
+                <form method="post" action="index.php#num2">
+                    <?php
+                    $pgcd = "n/a";
+                    $ppcm = "n/a";
+
+                    if (isset($_POST["nb1"]) && $_POST["nb2"]) {
+                        $pgcd = pgcd($_POST["nb1"], $_POST["nb2"]);
+                        $ppcm = ppcm($_POST["nb1"], $_POST["nb2"]);
+                    }
+                    ?>
+                    <div class="mb-3">
+                        <label for="nb1" class="form-label">Nombre 1</label>
+                        <input type="number" class="form-control" id="nb1" name="nb1"
+                               value="<?= $_POST["nb1"] ?? "" ?>">
+                    </div>
+                    <div class="mb-3">
+                        <label for="nb2" class="form-label">Nombre 2</label>
+                        <input type="number" class="form-control" id="nb2" name="nb2"
+                               value="<?= $_POST["nb2"] ?? "" ?>">
+                    </div>
+                    <div class="mb-3">
+                        <label for="pgcd-result" class="form-label">PGCD</label>
+                        <input type="text" class="form-control" id="pgcd-result" disabled placeholder="<?= $pgcd ?>">
+                    </div>
+                    <div class="mb-3">
+                        <label for="ppcm-result" class="form-label">PPCM</label>
+                        <input type="text" class="form-control" id="ppcm-result" disabled placeholder="<?= $ppcm ?>">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
         </div>
     </div>
-    <div class="mb-4">
+    <div class="mb-4" id="num3">
         <h2 class="fw-light mb-3">Numéro 3</h2>
         <div class="row">
             <div class="col-4">
@@ -94,7 +154,19 @@
                     </li>
                 </ol>
             </div>
-            <div class="col-8"></div>
+            <div class="col-8">
+                <form method="post" action="page2.php">
+                    <div class="mb-3">
+                        <label for="fname" class="form-label">Prénom</label>
+                        <input type="text" class="form-control" id="fname" name="fname">
+                    </div>
+                    <div class="mb-3">
+                        <label for="lname" class="form-label">Nom</label>
+                        <input type="text" class="form-control" id="lname" name="lname">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
         </div>
     </div>
 </div>
