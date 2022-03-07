@@ -100,3 +100,6 @@ modules.xml
 
 ### Docker
 dbdata
+
+### node modules, for whatever reason
+node_modules
