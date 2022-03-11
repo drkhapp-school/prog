@@ -1,15 +1,3 @@
-<?php
-$db = new PDO("mysql:dbname=test;host=172.18.0.2;port=3306", "test", "test");
-if (isset($_POST["name"]) && isset($_POST["category"])) {
-  $name = $_POST["name"];
-  $category = $_POST["category"];
-
-  $query = $db->prepare("INSERT INTO jeux (nom, categorie_id) VALUES (?, ?);");
-  $query->bindValue(1, $name);
-  $query->bindValue(2, $category);
-  $query->execute();
-}
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,13 +5,13 @@ if (isset($_POST["name"]) && isset($_POST["category"])) {
   <meta name="viewport"
         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <title>Atelier 1.3</title>
-  <link href="../node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <link href="../node_modules/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet" />
+  <title>Atelier 1.3 - Edit</title>
+  <link href="../../node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="../../node_modules/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet" />
 </head>
 <body>
 <div class="m-3">
-  <a href=".." class="btn btn-primary">go back to main lol</a>
+  <a href="../.." class="btn btn-primary">go back to main lol</a>
 </div>
 <hr />
 <div class="container">
@@ -53,26 +41,19 @@ if (isset($_POST["name"]) && isset($_POST["category"])) {
       </ul>
     </div>
     <div class="col-8">
-      <h3>Ajouter un jeu</h3>
-      <form method="post" action="create.php">
+      <h3>Modifier un jeu</h3>
+      <form method="post">
         <div class="mb-3">
           <label class="form-label" for="name">Nom</label>
           <input class="form-control" id="name" name="name" type="text">
         </div>
         <div class="mb-3">
           <label class="form-label" for="category">Catégorie</label>
-          <select id="category" class="form-select" name="category">
-            <?php
-            $query = $db->query("SELECT * FROM categories");
-            $result = $query->fetchAll(pdo::FETCH_ASSOC);
-
-            foreach ($result as $arr) {
-              echo "<option value='" . $arr["id"] . "'>" . $arr["nom"] . "</option>";
-            }
-            ?>
+          <select id="category" class="form-select">
+            <option>uwu</option>
           </select>
         </div>
-        <button class="btn btn-primary" type="submit">Ajouter</button>
+        <button class="btn btn-primary" type="submit">Modifier</button>
         <a href="index.php" class="btn btn-secondary ms-3">Annuler</a>
       </form>
     </div>

@@ -1,3 +1,8 @@
+<?php
+$db = new PDO("mysql:dbname=test;host=172.19.0.2;port=3306", "test", "test");
+$query = $db->query("SELECT jeux.nom AS game, categories.nom AS categ, jeux.id AS id FROM jeux INNER JOIN categories ON categorie_id = categories.id");
+$result = $query->fetchAll(pdo::FETCH_ASSOC);
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,8 +11,8 @@
         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <title>Atelier 1.3</title>
-  <link href="../node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <link href="../node_modules/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet" />
+  <link href="../../node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="../../node_modules/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet" />
 </head>
 <body>
 <div class="m-3">
@@ -47,9 +52,6 @@
       </div>
       <div class="list-group mt-2 mb-4">
         <?php
-        $db = new PDO("mysql:dbname=test;host=172.18.0.2;port=3306", "test", "test");
-        $query = $db->query("SELECT jeux.nom AS game, categories.nom AS categ, jeux.id AS id FROM jeux INNER JOIN categories ON categorie_id = categories.id");
-        $result = $query->fetchAll(pdo::FETCH_ASSOC);
         foreach ($result as $arr) {
           // god I wish this could be better formatted 🙄🙄🙄🙄🙄🙄🙄🙄🙄🙄🙄🙄🙄🙄🙄🙄🙄🙄🙄🙄🙄🙄🙄🙄🙄🙄🙄🙄🙄🙄🙄🙄🙄🙄🙄🙄🙄🙄🙄🙄🙄🙄🙄🙄🙄🙄🙄🙄🙄🙄
           echo "<div class='list-group-item list-group-item-action d-flex flex-row justify-content-between align-items-center'>";

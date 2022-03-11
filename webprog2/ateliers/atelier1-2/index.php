@@ -13,18 +13,7 @@ function PPCM(int $j, int $k): int
   return ($j * $k) / PGCD($j, $k);
 }
 
-$games = [
-        "Portal 2",
-        "Half Life 2",
-        "Half Life Alyx",
-        "Zenith MMR",
-        "Beat Saber",
-        "Counter Strike: Global Offensive",
-        "Minecraft",
-        "Super Smash Brothers Ultimate",
-        "A Hat in Time",
-        "NiER: Automata",
-];
+$games = ["Portal 2", "Half Life 2", "Half Life Alyx", "Zenith MMR", "Beat Saber", "Counter Strike: Global Offensive", "Minecraft", "Super Smash Brothers Ultimate", "A Hat in Time", "NiER: Automata",];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -34,11 +23,11 @@ $games = [
         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <title>Atelier 1.2</title>
-  <link href="../node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="../../node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
 </head>
 <body>
 <div class="m-3">
-  <a href=".." class="btn btn-primary">go back lol</a>
+  <a href="../.." class="btn btn-primary">go back lol</a>
 </div>
 <hr />
 <div class="container">

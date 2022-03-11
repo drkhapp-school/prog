@@ -3,7 +3,7 @@ if (isset($_POST["username"])) {
   // for whatever reason mac is retarded, so
   // docker inspect -f '{{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}' webprog2-db-1
   // keep this in mind! :)
-  $db = new PDO("mysql:dbname=test;host=172.18.0.2;port=3306", "test", "test");
+  $db = new PDO("mysql:dbname=test;host=172.19.0.2;port=3306", "test", "test");
   $user = $_POST["username"];
   $pass = $_POST["password"];
 
@@ -26,11 +26,11 @@ if (isset($_POST["username"])) {
         name="viewport" />
   <meta content="ie=edge" http-equiv="X-UA-Compatible" />
   <title>Form</title>
-  <link href="../node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="../../node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
 </head>
 <body>
 <div class="m-3">
-  <a class="btn btn-primary" href="..">go back lol</a>
+  <a class="btn btn-primary" href="../..">go back lol</a>
 </div>
 <hr />
 <div class="container">
