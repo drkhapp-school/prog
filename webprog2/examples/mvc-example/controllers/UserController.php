@@ -1,11 +1,15 @@
 <?php
 
+namespace controllers;
+
+use models\User;
+use PDO;
+use repositories\UserRepository;
+
 class UserController
 {
   function login()
   {
-
-    require __DIR__ . '/../models/User.php';
 
     // for whatever reason mac is retarded, so
     // docker inspect -f '{{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}' webprog2-db-1
@@ -14,7 +18,9 @@ class UserController
       $db = new PDO("mysql:dbname=test;host=172.19.0.2;port=3306", "test", "test");
       $username = $_POST["username"];
       $password = $_POST["password"];
-      $user = User::getOne($db, $username);
+
+      $userRepo = new UserRepository();
+      $user = $userRepo->getOne($db, $username);
 
       if ($user) {
         if (password_verify($password, $user->password)) {
@@ -23,8 +29,13 @@ class UserController
           echo 'Username existe';
         }
       } else {
-        User::insert($db, $username, $password);
+        $user = new User();
+        $user->username = $username;
+        $user->password = $password;
+        $userRepo->insert($db, $user);
       }
     }
+
+    require __DIR__ . "/../views/User/login.php";
   }
 }

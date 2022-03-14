@@ -14,18 +14,8 @@
 </div>
 <hr />
 <div class="container">
-  <h1 class="display-5">Login</h1>
-  <form method="post">
-    <div class="mb-3">
-      <label class="form-label" for="username">Username</label>
-      <input class="form-control" id="username" name="username" type="text">
-    </div>
-    <div class="mb-3">
-      <label class="form-label" for="password">Password</label>
-      <input class="form-control" id="password" name="password" type="password">
-    </div>
-    <button class="btn btn-primary" type="submit">Create Account</button>
-  </form>
+  <h1 class="display-5 mb-3">Welcome</h1>
+  <a href="<?= HOME_PATH ?>?controller=Users&action=login" class="btn btn-primary">Login</a>
 </div>
 </body>
 </html>
