@@ -2,9 +2,52 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>$Title$</title>
+  <title>Title</title>
+  <link href="../../node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
 </head>
 <body>
-$END$
+<div class="m-3">
+  <a class="btn btn-primary" href="../..">go back lol</a>
+</div>
+<hr />
+<div class="container">
+  <h1 class="display-5">Basic Form (again)</h1>
+  <div class="alert alert-info">Total: <span>0</span></div>
+  <form>
+    <div class="mb-3">
+      <label class="form-label" for="number">Nombre</label>
+      <input class="form-control" id="number" name="number" type="number">
+    </div>
+    <button class="btn btn-primary">Ajouter</button>
+  </form>
+</div>
+<script>
+  let total = 0;
+  const form = document.querySelector("form");
+  const input = document.querySelector("input");
+  const alert = document.querySelector(".alert > span");
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    total += parseInt(input.value);
+    alert.innerText = total;
+    input.value = "";
+  });
+</script>
+<script src="../../node_modules/dayjs/dayjs.min.js"></script>
+<script src="../../node_modules/dayjs/locale/fr-ca.js"></script>
+<script src="../../node_modules/dayjs/plugin/localizedFormat.js"></script>
+<script src="../../node_modules/dayjs/plugin/relativeTime.js"></script>
+<script>
+  dayjs.extend(window.dayjs_plugin_localizedFormat);
+  dayjs.extend(window.dayjs_plugin_relativeTime);
+  dayjs.locale("fr-ca");
+  
+  let now = dayjs();
+  console.log(`${now.format("LL LT")} baby girl`)
+  let cute = new Date(2, 13, 0);
+  now = now.add(3, "s");
+  console.log(`${now.format("LL LT")} baby girl`)
+  console.log(`youll have shit ${now.fromNow()}`);
+</script>
 </body>
 </html>
