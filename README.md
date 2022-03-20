@@ -36,6 +36,7 @@ Note that all comments are in **French.**
 - PHPStorm
   - `webprog2`
 - VSCode
-  - `web-prog1`
+  - `webprog1`
+  - `math`
 
 *moment noeud pile*
