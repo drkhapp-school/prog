@@ -1,0 +1,243 @@
+\documentclass{article}
+
+\usepackage{fancyhdr}
+\usepackage{extramarks}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{tikz}
+\usepackage[plain]{algorithm}
+\usepackage{algpseudocode}
+
+\usetikzlibrary{automata,positioning}
+
+%
+% Basic Document Settings
+%
+
+\topmargin=-0.45in
+\evensidemargin=0in
+\oddsidemargin=0in
+\textwidth=6.5in
+\textheight=9.0in
+\headsep=0.25in
+
+\linespread{1.1}
+
+\pagestyle{fancy}
+\lhead{\hmwkAuthorName}
+\chead{\hmwkClass\ : \hmwkTitle}
+\rhead{\firstxmark}
+\lfoot{\lastxmark}
+\cfoot{\thepage}
+
+\renewcommand\headrulewidth{0.4pt}
+\renewcommand\footrulewidth{0.4pt}
+
+\setlength\parindent{0pt}
+
+%
+% Create Problem Sections
+%
+
+\newcommand{\enterProblemHeader}[1]{
+    \nobreak\extramarks{}{Problème \arabic{#1} continué sur la prochaine page\ldots}\nobreak{}
+    \nobreak\extramarks{Problème \arabic{#1} (continué)}{Problème \arabic{#1} continué sur la prochaine page\ldots}\nobreak{}
+}
+
+\newcommand{\exitProblemHeader}[1]{
+    \nobreak\extramarks{Problème \arabic{#1} (continué)}{Problème \arabic{#1} continué sur la prochaine page\ldots}\nobreak{}
+    \stepcounter{#1}
+    \nobreak\extramarks{Problème \arabic{#1}}{}\nobreak{}
+}
+
+\setcounter{secnumdepth}{0}
+\newcounter{partCounter}
+\newcounter{homeworkProblemCounter}
+\setcounter{homeworkProblemCounter}{1}
+\nobreak\extramarks{Problème \arabic{homeworkProblemCounter}}{}\nobreak{}
+
+%
+% Homework Problem Environment
+%
+% This environment takes an optional argument. When given, it will adjust the
+% problem counter. This is useful for when the problems given for your
+% assignment aren't sequential. See the last 3 problems of this template for an
+% example.
+%
+\newenvironment{homeworkProblem}[1][-1]{
+    \ifnum#1>0
+        \setcounter{homeworkProblemCounter}{#1}
+    \fi
+    \section{Problème \arabic{homeworkProblemCounter}}
+    \setcounter{partCounter}{1}
+    \enterProblemHeader{homeworkProblemCounter}
+}{
+    \exitProblemHeader{homeworkProblemCounter}
+}
+
+%
+% Homework Details
+%   - Title
+%   - Due date
+%   - Class
+%   - Section/Time
+%   - Instructor
+%   - Author
+%
+
+\newcommand{\hmwkTitle}{Travail\ \#1}
+\newcommand{\hmwkDueDate}{21\ mars\ 2022}
+\newcommand{\hmwkClass}{Géométrie\ vectorielle}
+\newcommand{\hmwkAuthorName}{\textbf{Jean-Philippe\ Miguel-Gagnon}}
+
+%
+% Title Page
+%
+
+\title{
+    \vspace{2in}
+    \textmd{\textbf{\hmwkClass:\ \hmwkTitle}}\\
+    \normalsize\vspace{0.1in}\small{Due\ le\ \hmwkDueDate}\\
+    \vspace{3in}
+}
+
+\author{\hmwkAuthorName}
+\date{}
+
+\renewcommand{\part}[1]{\textbf{\large Part \Alph{partCounter}}\stepcounter{partCounter}\\}
+
+%
+% Various Helper Commands
+%
+
+% Useful for algorithms
+\newcommand{\alg}[1]{\textsc{\bfseries \footnotesize #1}}
+
+% For derivatives
+\newcommand{\deriv}[1]{\frac{\mathrm{d}}{\mathrm{d}x} (#1)}
+
+% For partial derivatives
+\newcommand{\pderiv}[2]{\frac{\partial}{\partial #1} (#2)}
+
+% Integral dx
+\newcommand{\dx}{\mathrm{d}x}
+
+% Alias for the Solution section header
+\newcommand{\solution}{\textbf{\large Solution}}
+
+% Probability commands: Expectation, Variance, Covariance, Bias
+\newcommand{\E}{\mathrm{E}}
+\newcommand{\Var}{\mathrm{Var}}
+\newcommand{\Cov}{\mathrm{Cov}}
+\newcommand{\Bias}{\mathrm{Bias}}
+
+
+\begin{document}
+
+\maketitle
+
+\pagebreak
+
+\begin{homeworkProblem}
+  Soit le triangle ABC, de sommets \(A(-2, 3)\), \(B(4, -2)\) et \(C(9, 1)\).
+
+  \[
+    \begin{split}
+      \vec{BA} &= (-6, 5)
+      \\
+      \vec{BC} &= (5, 3)
+      \\
+      \vec{AC} &= (11, -2)
+    \end{split}
+  \]
+
+
+  \begin{enumerate}
+    \item Trouver la mesure en degrés de l'angle obtus du triangle ABC.
+          \[
+            \begin{split}
+              \theta &= \arccos\frac{\vec{BA}\bullet\vec{BC}}{||\vec{BA}||\cdot||\vec{BC}||}
+              \\
+              &=\arccos\frac{(-6,5)\bullet(5,3)}{\sqrt{61}\cdot\sqrt{34}}
+              \\
+              &=\arccos\frac{6(5) + 5(3)}{\sqrt{2074}}
+              \\
+              &=\arccos\frac{15}{\sqrt{2074}}
+              \\
+              &\approx\arccos(0.3293)
+              \\
+              &\approx70.77\deg
+              \\
+              &\approx109.23\deg
+            \end{split}
+          \]
+    \item Soit \(D\), le point milieu du côté \(\vec{AC}\).
+          \begin{enumerate}
+            \item Exprimer le vecteur \(\vec{BD}\) comme une combinaison linéaire de vecteurs construits à partir des points \(A\), \(B\), \(C\).
+                  \[
+                    \begin{split}
+                      \vec{BD} &= \vec{BA} + \vec{AD}
+                      \\
+                      &= \vec{BA} + \frac{1}{2}\vec{AC}
+                    \end{split}
+                  \]
+            \item Trouver la longueur de la médiane \(\overline{BD}\).
+                  \[
+                    \begin{split}
+                      \vec{BD} &= \vec{BA} + \frac{1}{2}\vec{AC}
+                      \\
+                      &= (-6, 5) + \frac{1}{2}(11, -2)
+                      \\
+                      &= (-6, 5) + (\frac{11}{2}, -1)
+                      \\
+                      &= (\frac{1}{2}, 4)
+                    \end{split}
+                    \begin{split}
+                      \overline{BD} &= ||\vec{BA}||
+                      \\
+                      &= ||(\frac{1}{2}, 4)||
+                      \\
+                      &= \sqrt{\frac{1}{2}^2 + 4^2}
+                      \\
+                      &= \frac{\sqrt{65}}{2}
+                      \\
+                      &\approx 4.03113
+                    \end{split}
+                  \]
+          \end{enumerate}
+          \pagebreak
+    \item Soit \(h\), la hauteur abaissé du point \(A\) et qui coupe la droite \(\overline{BC}\) à angle droit au point \(E\).
+          \begin{enumerate}
+            \item Exprimer le vecteur \(\vec{BE}\) à l'aide d'une projection de vecteurs construits à partir des points \(A\), \(B\), \(C\).
+                  \[
+                    \vec{BE} = \vec{BA}_{\vec{BC}}
+                  \]
+            \item Trouvez la longueur du segment \(\overline{BE}\).
+                  \[
+                    \begin{split}
+                      \vec{BE} &= \frac{\vec{BA}\bullet\vec{BC}}{||\vec{BC}||}\cdot\vec{BC}
+                      \\
+                      &=\frac{(-6,5)\bullet(5,3)}{(\sqrt{5^2 + 3^2})^2}\cdot\vec{BC}
+                      \\
+                      &=\frac{6(5) + 5(3)}{5^2+3^2}\cdot\vec{BC}
+                      \\
+                      &=\frac{15}{34}\cdot\vec{BC}
+                      \\
+                      &=\frac{15}{34}\cdot(5, 3)
+                      \\
+                      &=(\frac{75}{34}, \frac{45}{34})
+                      \\
+                      &\approx(2.20588, 1.32352)
+                    \end{split}
+                    \begin{split}
+                      \overline{BE} &= ||\vec{BE}||
+                    \end{split}
+                  \]
+          \end{enumerate}
+  \end{enumerate}
+
+\end{homeworkProblem}
+
+
+\end{document}
